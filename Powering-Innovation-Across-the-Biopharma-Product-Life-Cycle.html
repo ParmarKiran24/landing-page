@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Powering Innovation Across the Biopharma Product Life Cycle</title>
+    <meta charset="utf-8">
+    <link rel="icon"
+        href="https://d9hhrg4mnvzow.cloudfront.net/w3.tech-funnel.com/walgreens-en-powering-innovation-across-your-product-life-cycle/be3bef30-w-corered-rgb.svg"
+        type="image/png" sizes="16x16">
+    </link>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- Google Fonts: Merriweather as alternative to Tiempos Regular -->
+    <link href="https://cdn.msar.me/fonts/Tiempos/TiemposHeadline-Regular.otf" rel="stylesheet">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        /* predictable sizing to avoid unexpected overflow from padding/margins */
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            margin: 0px;
+            /* hide any residual horizontal overflow on small devices */
+            overflow-x: hidden;
+        }
+
+        @font-face {
+            font-family: 'Tiempos Regular';
+            font-weight: 400;
+            src: url('https://cdn.msar.me/fonts/Tiempos/TiemposHeadline-Regular.otf');
+        }
+
+        .head-text {
+            font-family: 'Tiempos Headline', 'Georgia', serif !important;
+            font-weight: 500 !important;
+            font-size: 50px !important;
+            line-height: 66px !important;
+            font-style: italic !important;
+        }
+
+        .content {
+            font-size: 18px;
+            line-height: 28px;
+            font-weight: 400;
+            color: #141414;
+        }
+
+        p,
+        li,
+        label {
+            font-family: 'Inter', Arial, sans-serif;
+        }
+
+        .btn {
+            border: none;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: .055em;
+            line-height: 19px;
+            color: #ffffff;
+            background-color: #000d25;
+        }
+
+        .btn:hover {
+            background-color: #000d25;
+            color: #ffffff;
+        }
+
+        .bg-p {
+            background: url('https://d9hhrg4mnvzow.cloudfront.net/w3.tech-funnel.com/walgreens-en-powering-innovation-across-your-product-life-cycle/b78acdcd-download.webp');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            padding: 30px 0px;
+        }
+
+        .opt {
+            color: #333;
+            font-size: 15px;
+        }
+
+        .form-control {
+            font-size: 18px;
+            padding: 8px;
+            font-family: 'Inter';
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #cbcaca;
+            border-radius: unset;
+        }
+
+        .footer {
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #333333;
+            color: white;
+            text-align: center;
+        }
+
+        .card:hover {
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+            display: block;
+            margin-top: 5px;
+        }
+
+        label.error {
+            color: red;
+            font-size: 13px;
+            display: block;
+            margin-top: 5px;
+        }
+
+        input.error,
+        textarea.error {
+            /* Do not change input/textarea border color on error per user request. */
+            font-weight: 300;
+            color: inherit; /* keep original text color */
+        }
+
+        @media only screen and (max-width: 320px) {
+            .img-fluid {
+                width: 100%
+            }
+        }
+
+                /* =============================
+   BOOTSTRAP 5 SUBSET (RESPONSIVE)
+   For your HTML only, no CDN
+   ============================= */
+
+        /* -------------------
+   CONTAINERS
+------------------- */
+        .container,
+        .container-fluid {
+            width: 100% !important;
+            padding-right: 0.75rem !important;
+            padding-left: 0.75rem !important;
+            margin-right: auto !important;
+            margin-left: auto !important;
+            box-sizing: border-box !important;
+        }
+
+        /* .container {
+            max-width: 1320px !important;
+        } */
+
+        @media (min-width: 576px) {
+            .container {
+                max-width: 540px !important;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 720px !important;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .container {
+                max-width: 960px !important;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1140px !important;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1320px !important;
+            }
+        }
+
+        /* -------------------
+   GRID SYSTEM
+------------------- */
+        .row {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            margin-right: -0.75rem !important;
+            margin-left: -0.75rem !important;
+            box-sizing: border-box !important;
+        }
+
+        [class*="col-"] {
+            position: relative !important;
+            width: 100% !important;
+            padding-right: 0.75rem !important;
+            padding-left: 0.75rem !important;
+        }
+
+        /* Columns responsive */
+        .col-xs-12,
+        .col-sm-12,
+        .col-md-12 {
+            width: 100% !important;
+        }
+
+        @media (min-width: 576px) {
+            .col-sm-12 {
+                flex: 0 0 auto !important;
+                width: 100% !important;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .col-md-1 {
+                flex: 0 0 auto !important;
+                width: 8.333333% !important;
+            }
+
+            .col-md-4 {
+                flex: 0 0 auto !important;
+                width: 33.333333% !important;
+            }
+
+            .col-md-7 {
+                flex: 0 0 auto !important;
+                width: 58.333333% !important;
+            }
+
+            .col-md-12 {
+                flex: 0 0 auto !important;
+                width: 100% !important;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .col-lg-7 {
+                flex: 0 0 auto !important;
+                width: 58.333333% !important;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .col-xl-7 {
+                flex: 0 0 auto !important;
+                width: 58.333333% !important;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .col-xxl-7 {
+                flex: 0 0 auto !important;
+                width: 58.333333% !important;
+            }
+        }
+
+        /* -------------------
+   SPACING UTILITIES
+------------------- */
+        .p-4 {
+            padding: 1.5rem !important;
+        }
+
+        .pb-4 {
+            padding-bottom: 1.5rem !important;
+        }
+
+        .py-2 {
+            padding-top: 0.5rem !important;
+            padding-bottom: 0.5rem !important;
+        }
+
+        .py-5 {
+            padding-top: 3rem !important;
+            padding-bottom: 3rem !important;
+        }
+
+        .mt-2 {
+            margin-top: 0.5rem !important;
+        }
+
+        .mt-3 {
+            margin-top: 1rem !important;
+        }
+
+        .mt-4 {
+            margin-top: 1.5rem !important;
+        }
+
+        .mt-5 {
+            margin-top: 3rem !important;
+        }
+
+        .mb-3 {
+            margin-bottom: 1rem !important;
+        }
+
+        .mb-5 {
+            margin-bottom: 3rem !important;
+        }
+
+        /* -------------------
+   TEXT & BACKGROUND
+------------------- */
+        .text-white {
+            color: #ffffff !important;
+        }
+
+        .text-left {
+            text-align: left !important;
+        }
+
+        .bg-p {
+            background-color: #a32a33 !important;
+        }
+
+        /* -------------------
+   CARD
+------------------- */
+        .card {
+            position: relative !important;
+            display: flex !important;
+            flex-direction: column !important;
+            background-color: #fff !important;
+            border: 1px solid rgba(0, 0, 0, 0.125) !important;
+            border-radius: 0.375rem !important;
+            padding: 1.5rem !important;
+            box-sizing: border-box !important;
+        }
+
+        /* -------------------
+   IMAGES
+------------------- */
+        .img-fluid {
+            max-width: 100% !important;
+            height: auto !important;
+            display: block !important;
+        }
+
+        /* -------------------
+   FORMS
+------------------- */
+        .form-control {
+            width: 100% !important;
+            padding: 0.375rem 0.75rem !important;
+            font-size: 1rem !important;
+            line-height: 1.5 !important;
+            color: #212529 !important;
+            background-clip: padding-box !important;
+            border-radius: 0.375rem !important;
+            box-sizing: border-box !important;
+        }
+
+        .form-check {
+            display: block !important;
+            min-height: 1.5rem !important;
+            /* margin-bottom: 0.125rem !important; */
+        }
+
+        .form-check-input {
+            width: 1em !important;
+            height: 1em !important;
+            margin-top: 0.25em !important;
+            vertical-align: top !important;
+        }
+
+        .form-check-input:checked {
+            background-color: #0d6efd !important;
+            border-color: #0d6efd !important;
+        }
+
+        .form-check-label {
+            margin-left: 0.5em !important;
+        }
+
+        /* -------------------
+   BUTTONS
+------------------- */
+
+        /* -------------------
+   RESPONSIVE MEDIA QUERIES
+------------------- */
+        @media (max-width: 575.98px) {
+            .container {
+                padding-left: 0rem !important;
+                padding-right: 0rem !important;
+            }
+
+            .px-md-1 {
+                padding-left: 12px !important;
+                padding-right: 12px !important;
+            }
+
+            .row {
+                margin-left: -0.5rem !important;
+                margin-right: -0.5rem !important;
+            }
+
+            [class*="col-"] {
+                padding-left: 0.5rem !important;
+                padding-right: 0.5rem !important;
+            }
+
+            .p-4 {
+                padding: 1rem !important;
+            }
+
+            .py-5 {
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+            }
+
+            .card {
+                padding: 1rem !important;
+            }
+
+            .btn {
+                width: 60% !important;
+                padding: 0.75rem 1rem !important;
+            }
+        }
+
+        /* Prevent the download button from causing horizontal scroll on very small screens */
+        @media (max-width: 400px) {
+
+            .btn_dwnd,
+            .lp-pom-button {
+                padding-left: 12px !important;
+                padding-right: 12px !important;
+                font-size: 16px !important;
+            }
+        }
+
+        /* Ensure the full-width top container cannot overflow horizontally */
+        .container-fluid {
+            overflow-x: hidden;
+        }
+
+        /* Optional: ensure brand logo scales responsively but keeps a reasonable max-width */
+        .brand-logo {
+            display: block;
+            max-width: 270px;
+            width: 100%;
+            height: auto;
+        }
+
+        /* Ensure the full-width top container cannot overflow horizontally */
+        .container-fluid {
+            overflow-x: hidden;
+        }
+
+        @media (max-width: 767.98px) {
+
+            .col-md-7,
+            .col-md-4,
+            .col-md-1 {
+                width: 100% !important;
+                flex: 0 0 auto !important;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            .col-lg-7 {
+                width: 100% !important;
+                flex: 0 0 auto !important;
+            }
+        }
+
+        /* Hide the 1-column spacer on small / tablet screens so the main content and card stack cleanly */
+        @media (max-width: 767.98px) {
+            .col-md-1-spacer {
+                display: none !important;
+            }
+        }
+
+        /* Default for all screens */
+        .col-md-6 {
+            width: 100% !important;
+            flex: 0 0 auto !important;
+            max-width: 100% !important;
+            padding-right: 0.75rem !important;
+            padding-left: 0.75rem !important;
+            box-sizing: border-box !important;
+        }
+
+        /* Medium devices and up (≥768px) */
+        @media (min-width: 768px) {
+            .col-md-6 {
+                flex: 0 0 auto !important;
+                width: 50% !important;
+                max-width: 50% !important;
+            }
+        }
+    </style>
+</head>
+
+<body style="background-color:#DFD6D0;">
+    <div class="container-fluid p-4 bg-p text-white text-left">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 py-2 mb-5">
+                    <img src="https://storage.pardot.com/985971/1729283213EMzV2E3d/Group_1157_2x.png" class="img-fluid brand-logo"
+                        style="width:270px;" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 mt-5 py-5">
+                    <p style="line-height:66px;" class="py-3"><span style="font-weight: 400; font-family: &quot;Tiempos Regular&quot;; font-size: 56px; color: rgb(255, 255, 255);"><span style="font-style: normal;"><span style="letter-spacing: normal;"><em>Powering Innovation Across the Biopharma Product Life Cycle</em></span></span></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 col-sm-12 col-xs-12 content">
+                <!--<p>Discover how Walgreens is enabling faster, smarter decision-making throughout every stage of biopharma innovation — from clinical research to commercialization and patient outcomes. This infographic illustrates how our nationwide reach, real-time intelligence, and personalized patient engagement can help you accelerate success at every touchpoint.</p>
+				<p><span style="font-family: 'Inter SB', Arial, sans-serif;">Download the Infographic </span>to see how Walgreens transforms millions of patient interactions into meaningful insights that drive better outcomes.</p>-->
+                <p style="line-height: 30px;" class="px-md-1"><span style="font-style: normal;"><span style="font-weight: 400;"><span
+                                style="font-family: Inter;"><span style="font-size: 20px; letter-spacing: 0px;">You’ve
+                                    developed a therapy that can change lives. Walgreens helps you deliver on that
+                                    promise with speed, scale, and precision. From clinical research to
+                                    commercialization, we provide real-time data, nationwide reach, and personalized
+                                    patient engagement to help you drive better
+                                    outcomes—faster.</span></span></span></span></p>
+                <p style="line-height: 30px;" class="px-md-1"><span style="letter-spacing: 00px;"><span
+                            style="font-style: normal;"><span style="font-weight: 400;"><span
+                                    style="font-family: Inter;"><span style="font-size: 20px;">You will learn how
+                                        Walgreens supports biopharma innovation across the product lifecycle. From
+                                        advancing clinical research with diverse, real-world patient access to engaging
+                                        patients at scale with personalized support, Walgreens helps optimize treatment
+                                        pathways, unlock actionable intelligence, and drive successful commercialization
+                                        with confidence.</span></span></span></span></span></p>
+                <p style="line-height: 30px;" class="px-md-1"><span style="font-style: normal;"><span style="font-weight: 400;"><span
+                                style="font-family: Inter;"><span
+                                    style="font-size: 20px; letter-spacing: 0px;"><strong>Download the
+                                        Infographic</strong> to get a visual breakdown of how Walgreens powers biopharma
+                                    innovation—from R&amp;D to launch and beyond.</span></span></span></span></p>
+                <!--<div class="row">
+                  <div class="col-md-7 col-sm-12 mt-4 mb-5">
+                     <img src="thumbnail.png" width="100%" style="box-shadow: 0 12px 30px -10px rgba(0, 0, 0, .4) !important;"/> 
+                  </div>
+               </div>-->
+            </div>
+            <div class="col-md-1 col-sm-12 col-xs-12 col-md-1-spacer"></div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <div class="row mt-2">
+                    <div class="col-md-12 card p-4" style="margin-bottom:20px; background-color: #f4f2f0;">
+                       <p style="line-height: 24px;" class="px-md-1"><span style="font-size: 24px; font-family: Inter; font-weight: 400; font-style: normal;"><strong>Download your infographic.</strong></span></p>
+                        <form id="lp-pom-form-163" action="/fsg?pageId=43af12ba-023c-4365-859c-67949a8067c9&variant=a"
+                            method="POST" novalidate style="font-family: 'Inter', Arial, sans-serif;">
+                            <!-- Hidden Inputs for functionality -->
+                            <input type="hidden" name="pageId" value="43af12ba-023c-4365-859c-67949a8067c9" />
+                            <input type="hidden" name="pageVariant" value="a" />
+                            <input type="hidden" class="form-control" id="asset_title" name="asset_title"
+                                value="Powering Innovation Across the Biopharma Product Life Cycle" />
+                            <input type="hidden" class="form-control" id="campname" name="campname"
+                                value="Walgreen 25q3" />
+
+                            <!-- Form Fields -->
+                            <div class="mb-3 mt-3 lp-pom-form-field single-line-text" id="container_first_name">
+                                <input type="text" class="form-control ub-input-item single text form_elem_first_name"
+                                    id="first_name" name="first_name" placeholder="First Name*" required />
+                            </div>
+                            <div class="mb-3 lp-pom-form-field single-line-text" id="container_last_name">
+                                <input type="text" class="form-control ub-input-item single text form_elem_last_name"
+                                    id="last_name" name="last_name" placeholder="Last Name*" required />
+                            </div>
+                            <div class="mb-3 lp-pom-form-field email" id="container_work_email">
+                                <input type="email" class="form-control ub-input-item single text form_elem_work_email"
+                                    id="work_email" name="work_email" placeholder="Work Email*" required
+                                    pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9_\-]+[.]+[a-zA-Z0-9\-.]{2,61}$" />
+                            </div>
+                            <div class="mb-3 lp-pom-form-field single-line-text" id="container_job_title">
+                                <input type="text" class="form-control ub-input-item single text form_elem_job_title"
+                                    id="job_title" name="job_title" placeholder="Job Title*" required />
+                            </div>
+                            <div class="mb-3 lp-pom-form-field single-line-text" id="container_company_name">
+                                <input type="text" class="form-control ub-input-item single text form_elem_company_name"
+                                    id="company_name" name="company_name" placeholder="Company Name*" required />
+                            </div>
+
+                            <!-- Consent Checkbox -->
+                            <div class="form-check mb-3 lp-pom-form-field checkbox-group multi-group" id="container_a">
+                                <input type="checkbox"
+                                    class="form-check-input checkbox form-builder-checkbox-input form_elem_a"
+                                    id="consent_checkbox" name="a"
+                                    value="By providing my contact information, I agree and authorize <b>Walgreens</b> to contact me with personalized communications about products and services. You also acknowledge that your data may be collected and processed in accordance with applicable laws and regulations."
+                                    required />
+                                <label class="form-check-label opt form-builder-checkbox-label"
+                                    style="font-size: 18px; letter-spacing: 0px; font-weight: 400; font-family: 'Inter', Arial, sans-serif; line-height: 21px;"
+                                    for="consent_checkbox">
+                                    By providing my contact information, I agree and authorize <b>Walgreens</b> to
+                                    contact me with personalized communications about products and services. You also
+                                    acknowledge that your data may be collected and processed in accordance with
+                                    applicable laws and regulations.
+                                </label>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="form-group">
+                                <button type="submit" class="btn_dwnd btn lp-element lp-pom-button"
+                                    id="lp-pom-button-164"
+                                    style="background-color:#A32A33; width: auto; color:#ffffff; font-weight:700; padding: 15px 50px; border-radius: 25px; font-family: 'Inter', Arial, sans-serif; font-size: 20px;">
+                                    Download
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('lp-pom-form-163');
+        const pdfUrl = 'https://www.onlinewhitepapers.com/wp-content/uploads/2025/07/WAG-BioPharma-ProductLifeCycle_Infographic_v01R2.pdf';
+
+        function clearErrors() {
+            const old = form.querySelectorAll('div.error');
+            old.forEach(e => e.remove());
+            const errorInputs = form.querySelectorAll('input.error, textarea.error');
+            errorInputs.forEach(i => i.classList.remove('error'));
+        }
+
+        function showError(el, message) {
+            if (!el) return;
+            el.classList.add('error');
+            const err = document.createElement('div');
+            err.className = 'error';
+            err.textContent = message;
+            if (el.parentNode) {
+                if (el.nextSibling) el.parentNode.insertBefore(err, el.nextSibling);
+                else el.parentNode.appendChild(err);
+            }
+        }
+
+        function isFormValidSimple() {
+            const firstName = form.querySelector('#first_name');
+            const lastName = form.querySelector('#last_name');
+            const workEmail = form.querySelector('#work_email');
+            const jobTitle = form.querySelector('#job_title');
+            const companyName = form.querySelector('#company_name');
+            const consent = form.querySelector('#consent_checkbox');
+
+            if (!firstName || firstName.value.trim() === '') return false;
+            if (!lastName || lastName.value.trim() === '') return false;
+            if (!workEmail || workEmail.value.trim() === '') return false;
+            const emailRe = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9_\-]+\.[a-zA-Z0-9.\-]{2,61}$/;
+            if (!emailRe.test(workEmail.value.trim())) return false;
+            if (!jobTitle || jobTitle.value.trim() === '') return false;
+            if (!companyName || companyName.value.trim() === '') return false;
+            if (!consent || !consent.checked) return false;
+
+            return true;
+        }
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            clearErrors();
+            if (isFormValidSimple()) {
+                window.open(pdfUrl, '_blank');
+            } else {
+                const firstName = form.querySelector('#first_name');
+                const lastName = form.querySelector('#last_name');
+                const workEmail = form.querySelector('#work_email');
+                const jobTitle = form.querySelector('#job_title');
+                const companyName = form.querySelector('#company_name');
+                const consent = form.querySelector('#consent_checkbox');
+
+                if (!firstName || firstName.value.trim() === '') showError(firstName, 'Please enter your first name');
+                if (!lastName || lastName.value.trim() === '') showError(lastName, 'Please enter your last name');
+                if (!workEmail || workEmail.value.trim() === '') showError(workEmail, 'Please enter your work email');
+                else {
+                    const emailRe = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9_\-]+\.[a-zA-Z0-9.\-]{2,61}$/;
+                    if (!emailRe.test(workEmail.value.trim())) showError(workEmail, 'Please enter a valid work email');
+                }
+                if (!jobTitle || jobTitle.value.trim() === '') showError(jobTitle, 'Please enter your job title');
+                if (!companyName || companyName.value.trim() === '') showError(companyName, 'Please enter your company name');
+                if (!consent || !consent.checked) showError(consent, 'Please agree to the terms to proceed with the download');
+            }
+        });
+    });
+</script>
+
+</html>
