@@ -631,75 +631,100 @@
 </body>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const form = document.getElementById('lp-pom-form-163');
-        const pdfUrl = 'https://www.onlinewhitepapers.com/wp-content/uploads/2025/07/WAG-BioPharma-ProductLifeCycle_Infographic_v01R2.pdf';
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('lp-pom-form-163');
+  const pdfUrl = 'https://www.onlinewhitepapers.com/wp-content/uploads/2025/07/WAG-BioPharma-ProductLifeCycle_Infographic_v01R2.pdf';
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyyF3_ir3Od6SwYDv6Lky-ZN_IGceskp5X-22Wy0SAbwXlbhZdu9Pd_WB-4nYf2vB6V/exec'; // <-- Replace with your Google Apps Script Web App URL
 
-        function clearErrors() {
-            const old = form.querySelectorAll('div.error');
-            old.forEach(e => e.remove());
-            const errorInputs = form.querySelectorAll('input.error, textarea.error');
-            errorInputs.forEach(i => i.classList.remove('error'));
-        }
+  function clearErrors() {
+    const old = form.querySelectorAll('div.error');
+    old.forEach(e => e.remove());
+    const errorInputs = form.querySelectorAll('input.error, textarea.error');
+    errorInputs.forEach(i => i.classList.remove('error'));
+  }
 
-        function showError(el, message) {
-            if (!el) return;
-            el.classList.add('error');
-            const err = document.createElement('div');
-            err.className = 'error';
-            err.textContent = message;
-            if (el.parentNode) {
-                if (el.nextSibling) el.parentNode.insertBefore(err, el.nextSibling);
-                else el.parentNode.appendChild(err);
-            }
-        }
+  function showError(el, message) {
+    if (!el) return;
+    el.classList.add('error');
+    const err = document.createElement('div');
+    err.className = 'error';
+    err.textContent = message;
+    if (el.parentNode) {
+      if (el.nextSibling) el.parentNode.insertBefore(err, el.nextSibling);
+      else el.parentNode.appendChild(err);
+    }
+  }
 
-        function isFormValidSimple() {
-            const firstName = form.querySelector('#first_name');
-            const lastName = form.querySelector('#last_name');
-            const workEmail = form.querySelector('#work_email');
-            const jobTitle = form.querySelector('#job_title');
-            const companyName = form.querySelector('#company_name');
-            const consent = form.querySelector('#consent_checkbox');
+  function isFormValidSimple() {
+    const firstName = form.querySelector('#first_name');
+    const lastName = form.querySelector('#last_name');
+    const workEmail = form.querySelector('#work_email');
+    const jobTitle = form.querySelector('#job_title');
+    const companyName = form.querySelector('#company_name');
+    const consent = form.querySelector('#consent_checkbox');
 
-            if (!firstName || firstName.value.trim() === '') return false;
-            if (!lastName || lastName.value.trim() === '') return false;
-            if (!workEmail || workEmail.value.trim() === '') return false;
-            const emailRe = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9_\-]+\.[a-zA-Z0-9.\-]{2,61}$/;
-            if (!emailRe.test(workEmail.value.trim())) return false;
-            if (!jobTitle || jobTitle.value.trim() === '') return false;
-            if (!companyName || companyName.value.trim() === '') return false;
-            if (!consent || !consent.checked) return false;
+    if (!firstName.value.trim()) return false;
+    if (!lastName.value.trim()) return false;
+    const emailRe = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9_\-]+\.[a-zA-Z0-9.\-]{2,61}$/;
+    if (!emailRe.test(workEmail.value.trim())) return false;
+    if (!jobTitle.value.trim()) return false;
+    if (!companyName.value.trim()) return false;
+    if (!consent.checked) return false;
+    return true;
+  }
 
-            return true;
-        }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    clearErrors();
+    if (isFormValidSimple()) {
+      const data = {
+        first_name: form.querySelector('#first_name').value.trim(),
+        last_name: form.querySelector('#last_name').value.trim(),
+        work_email: form.querySelector('#work_email').value.trim(),
+        job_title: form.querySelector('#job_title').value.trim(),
+        company_name: form.querySelector('#company_name').value.trim()
+      };
 
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            clearErrors();
-            if (isFormValidSimple()) {
-                window.open(pdfUrl, '_blank');
-            } else {
-                const firstName = form.querySelector('#first_name');
-                const lastName = form.querySelector('#last_name');
-                const workEmail = form.querySelector('#work_email');
-                const jobTitle = form.querySelector('#job_title');
-                const companyName = form.querySelector('#company_name');
-                const consent = form.querySelector('#consent_checkbox');
+      // Send data to Google Sheet
+      fetch(scriptURL, {
+        method: 'POST',
+        mode: 'no-cors', // bypass CORS for Apps Script
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(() => {
+        // After sending data, open PDF
+        window.open(pdfUrl, '_blank');
+        form.reset();
+      })
+      .catch(error => {
+        console.error('Error!', error.message);
+        window.open(pdfUrl, '_blank'); // still open PDF even if sheet save fails
+      });
 
-                if (!firstName || firstName.value.trim() === '') showError(firstName, 'Please enter your first name');
-                if (!lastName || lastName.value.trim() === '') showError(lastName, 'Please enter your last name');
-                if (!workEmail || workEmail.value.trim() === '') showError(workEmail, 'Please enter your work email');
-                else {
-                    const emailRe = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9_\-]+\.[a-zA-Z0-9.\-]{2,61}$/;
-                    if (!emailRe.test(workEmail.value.trim())) showError(workEmail, 'Please enter a valid work email');
-                }
-                if (!jobTitle || jobTitle.value.trim() === '') showError(jobTitle, 'Please enter your job title');
-                if (!companyName || companyName.value.trim() === '') showError(companyName, 'Please enter your company name');
-                if (!consent || !consent.checked) showError(consent, 'Please agree to the terms to proceed with the download');
-            }
-        });
-    });
+    } else {
+      const firstName = form.querySelector('#first_name');
+      const lastName = form.querySelector('#last_name');
+      const workEmail = form.querySelector('#work_email');
+      const jobTitle = form.querySelector('#job_title');
+      const companyName = form.querySelector('#company_name');
+      const consent = form.querySelector('#consent_checkbox');
+
+      if (!firstName.value.trim()) showError(firstName, 'Please enter your first name');
+      if (!lastName.value.trim()) showError(lastName, 'Please enter your last name');
+      if (!workEmail.value.trim()) showError(workEmail, 'Please enter your work email');
+      else {
+        const emailRe = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9_\-]+\.[a-zA-Z0-9.\-]{2,61}$/;
+        if (!emailRe.test(workEmail.value.trim())) showError(workEmail, 'Please enter a valid work email');
+      }
+      if (!jobTitle.value.trim()) showError(jobTitle, 'Please enter your job title');
+      if (!companyName.value.trim()) showError(companyName, 'Please enter your company name');
+      if (!consent.checked) showError(consent, 'Please agree to the terms to proceed with the download');
+    }
+  });
+});
 </script>
 
 </html>
