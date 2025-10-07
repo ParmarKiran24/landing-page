@@ -634,7 +634,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('lp-pom-form-163');
   const pdfUrl = 'https://www.onlinewhitepapers.com/wp-content/uploads/2025/07/WAG-Product-life-cycle-Infographic.pdf';
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbx6nF-tZDdtsQAmZuiAyIezL5CU6hQnwDX3n6fNZSmGfbPrxrmdWY3-nkuuBSIhoQXtLQ/exec'; // <-- Replace with your Google Apps Script Web App URL
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzD0SGt9XaCWLxkJHELALE5ZFl6mz80Kg23l2mwAxpuxSwDJL9g9RSDH-OdpTmkjLqrCw/exec'; // <-- Replace with your Google Apps Script Web App URL
 
   function clearErrors() {
     const old = form.querySelectorAll('div.error');
@@ -643,6 +643,7 @@ document.addEventListener('DOMContentLoaded', function () {
     errorInputs.forEach(i => i.classList.remove('error'));
   }
 
+  
   function showError(el, message) {
     if (!el) return;
     el.classList.add('error');
